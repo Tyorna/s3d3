@@ -29,7 +29,7 @@ public class Persona {
 	private String sesso;
 
 	@OneToMany(mappedBy = "persona")
-	private Set<Partecipazione> partecipazioni;
+	private Set<Partecipazione> partecipazione;
 
 	public Persona(String nome, String cognome, String email, LocalDate dataNascita, String sesso) {
 		this.nome = nome;

@@ -25,7 +25,7 @@ public class Location {
 		private String citta;
 
 		@OneToMany(mappedBy = "location")
-		private Set<Evento> events;
+		private Set<Evento> event;
 
 		public Location(String nome, String citta) {
 			this.nome = nome;

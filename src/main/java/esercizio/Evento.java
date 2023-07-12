@@ -35,7 +35,11 @@ public class Evento {
 
 	@ManyToOne
 	@JoinColumn(name = "location_id", referencedColumnName = "id", nullable = false)
-	private Location locations;
+	private Location location;
+
+	@ManyToOne
+	@JoinColumn(name = "partecipazione_id", referencedColumnName = "id", nullable = false)
+	private Partecipazione partecipazione;
 
 	public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento,
 			int numeroMassimoPartecipanti) {

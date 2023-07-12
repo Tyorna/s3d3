@@ -33,8 +33,10 @@ public class Partecipazione {
 	@JoinColumn(name = "evento_id", referencedColumnName = "id", nullable = false)
 	private Evento evento;
 
-	public Partecipazione(StatoPartec stato) {
+	public Partecipazione(StatoPartec stato, Persona persona, Evento evento) {
 		this.stato = stato;
+		this.persona = persona;
+		this.evento = evento;
 	}
 
 	@Override
