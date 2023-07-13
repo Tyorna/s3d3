@@ -20,13 +20,12 @@ public class App {
 
 		Persona pers1 = new Persona("A", "B", "a@mail.com", LocalDate.parse("2024-02-19"), "f");
 		Location loc1 = new Location("Al", "Casa");
-		Evento ev1 = new Evento("Evento3", LocalDate.parse("2024-02-19"), "beach-party", TipoEvento.PRIVATO, 55);
 		pr.save(pers1);
 		loc.save(loc1);
+		Evento ev1 = new Evento("Evento2", LocalDate.parse("2014-02-19"), "beach-party", TipoEvento.PRIVATO, 55, loc1);
 		ev.save(ev1);
 		Partecipazione part1 = new Partecipazione(StatoPartec.Confermata, pers1, ev1);
 		part.save(part1);
-		ev1.setPartecipazione(part1);
 
 //		User u = ud.findById(4);
 //		System.out.println(u.getDocument());

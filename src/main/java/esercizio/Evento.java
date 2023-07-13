@@ -1,6 +1,7 @@
 package esercizio;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -37,17 +39,17 @@ public class Evento {
 	@JoinColumn(name = "location_id", referencedColumnName = "id", nullable = false)
 	private Location location;
 
-	@ManyToOne
-	@JoinColumn(name = "partecipazione_id", referencedColumnName = "id", nullable = false)
-	private Partecipazione partecipazione;
+	@OneToMany(mappedBy = "evento")
+	private Set<Partecipazione> partecipazione;
 
 	public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento,
-			int numeroMassimoPartecipanti) {
+			int numeroMassimoPartecipanti, Location location) {
 		this.titolo = titolo;
 		this.dataEvento = dataEvento;
 		this.descrizione = descrizione;
 		this.tipoEvento = tipoEvento;
 		this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+		this.location = location;
 	}
 
 	@Override

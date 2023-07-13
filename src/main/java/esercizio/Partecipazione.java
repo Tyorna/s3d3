@@ -30,7 +30,7 @@ public class Partecipazione {
 	private Persona persona;
 
 	@ManyToOne
-	@JoinColumn(name = "evento_id", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "evento_id", referencedColumnName = "id")
 	private Evento evento;
 
 	public Partecipazione(StatoPartec stato, Persona persona, Evento evento) {
